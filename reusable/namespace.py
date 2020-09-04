@@ -28,10 +28,12 @@ def _recursive_create(self, iterable):
 
 
 class Namespace(dict):
-    """
+    r"""
     Namespace container.
     Allows access to attributes by either class dot notation or item reference
-    All valid:
+
+    Valid::
+
         - namespace.spam.eggs
         - namespace['spam']['eggs']
         - namespace['spam'].eggs
