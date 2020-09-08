@@ -6,6 +6,8 @@ __pycache__/
 # Mr Developer
 test.py
 config.json
+contributing.txt
+
 
 # C extensions
 *.so
