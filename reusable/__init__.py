@@ -16,4 +16,3 @@ __all__=[
 
 from .config import AppConfig,Config
 from .namespace import Namespace
-
