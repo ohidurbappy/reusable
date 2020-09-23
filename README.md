@@ -26,7 +26,10 @@ config=Config('config.json')
 mykey=config.get('my_key')
 ```
 
-
-
+## Available functions
+random_string() : return a random string of specified length and character set
+print_table() : prints a data table provided as list
+print_time_taken [decorator] : prints the time of execution of a parameter
+groupby_count() : groups a given list according the number of times it appears
 
 
