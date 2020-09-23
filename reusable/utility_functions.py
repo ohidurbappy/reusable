@@ -10,6 +10,16 @@ Contains a handful of utility functions.
 """
 
 import time
+import sys
+import imp
+
+__all__=[
+    'print_table',
+    'print_time_taken',
+    'is_python3',
+    'is_python_above_or_equal',
+    'check_modules_installed'
+]
 
 
 def print_table(table: list) -> None:
@@ -61,3 +71,32 @@ def print_time_taken(func) -> None:
         print(f"INFO: Time of Execution: {time_end-time_end}")
         return fn
     return _func
+
+def is_python3():
+    """Check if the python version is 3.0 or above
+
+    """
+    return sys.version_info >= (3, 0)
+def is_python_above_or_equal(major,minor):
+    """Check if the version of the python interpreter is above or equal to major.minor
+
+    """
+    return sys.version_info >= (major,minor)
+
+def check_modules_installed(modules):
+    """Checks if the given modules are installed
+
+    Returns list of not installed module
+    """
+    not_installed_modules = []
+    for module_name in modules:
+        try:
+            imp.find_module(module_name)
+        except ImportError as e:
+            # We also test against a rare case: module is an egg file
+            try:
+                __import__(module_name)
+            except ImportError as e:
+                not_installed_modules.append(module_name)
+
+    return not_installed_modules
