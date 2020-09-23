@@ -23,7 +23,7 @@ def random_string(length:int=6, charset:str=string.ascii_letters+string.digits):
 
     Parameters::
 
-        length (int): The length of the string to return [Optional]
+        length (int): The length(optional) of the string to return
         charset (str): The character set to build the string
 
     Usage::
