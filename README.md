@@ -31,5 +31,8 @@ random_string() : return a random string of specified length and character set
 print_table() : prints a data table provided as list
 print_time_taken [decorator] : prints the time of execution of a parameter
 groupby_count() : groups a given list according the number of times it appears
-
-
+generate_all_datetime_regex : generate the regex for all possible datetime
+download_file : download a file from the given url
+is_python3() : check if the interpreter is python v3
+is_python_above_or_equal() : check if the interpreter is above or equal to the given version
+check_modules_installed() : check if the given modules are installed

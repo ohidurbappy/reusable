@@ -12,7 +12,6 @@ Version 0.0.2
 * Added is_python3() function
 * Added is_python_above_or_equal() function
 * Added check_modules_installed() function
-* 
 
 Version 0.0.1
 -------------
