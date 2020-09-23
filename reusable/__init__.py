@@ -6,7 +6,7 @@
 A python package with reusable functions and utility classes. 
 """
 __author__="Ohidur Rahman Bappy"
-__version__="0.0.1"
+__version__="0.0.2"
 __license__ = "MIT"
 __status__ = "Production"
 
