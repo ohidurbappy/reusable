@@ -2,7 +2,7 @@
 # -*- coding: UTF-8 -*-
 #
 # Part of reusable package
-# 
+#
 # Copyright (c) 2020 - Ohidur Rahman Bappy - MIT License
 """Iterable Functions.
 
@@ -10,14 +10,12 @@ Contains a handful of iterable functions.
 """
 
 
-
-
 from collections import defaultdict
 
 
 def groupby_count(i, key=None, force_keys=None):
     """Group a list of elements as per the count
-    
+
     Usage::
 
         >>> from reusable.functions import groupby_count
@@ -26,7 +24,7 @@ def groupby_count(i, key=None, force_keys=None):
     """
     counter = defaultdict(lambda: 0)
     if not key:
-        key = lambda o: o
+        def key(o): return o
 
     for k in i:
         counter[key(k)] += 1
