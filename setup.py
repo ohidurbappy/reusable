@@ -25,6 +25,7 @@ setuptools.setup(
     include_package_data=True,
     platforms="any",
     packages=setuptools.find_packages(),
+    package_data={PACKAGE_NAME: ['data/*.txt']},
     classifiers=[
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",

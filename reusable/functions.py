@@ -14,3 +14,4 @@ from .iterable_functions import groupby_count
 from .network_functions import download_file
 from .string_functions import random_string
 from .utility_functions import *
+from .fake_useragent import random_useragent
