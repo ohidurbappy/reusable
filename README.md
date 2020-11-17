@@ -37,3 +37,4 @@ mykey=config.get('my_key')
 - **is_python_above_or_equal()** : check if the interpreter is above or equal to the given version
 - **check_modules_installed()** : check if the given modules are installed
 - **random_useragent()** : return a random useragent
+- **is_valid_json()** : checks if given string is valid json
