@@ -1,5 +1,10 @@
 Changelog
 =========
+Version 0.0.4
+-------------
+* Added is_valid_json() function
+* Bug Fix
+
 Version 0.0.3
 -------------
 

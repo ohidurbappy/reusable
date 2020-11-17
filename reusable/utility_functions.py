@@ -12,13 +12,15 @@ Contains a handful of utility functions.
 import time
 import sys
 import imp
+import json
 
 __all__=[
     'print_table',
     'print_time_taken',
     'is_python3',
     'is_python_above_or_equal',
-    'check_modules_installed'
+    'check_modules_installed',
+    'is_valid_json'
 ]
 
 
@@ -68,7 +70,7 @@ def print_time_taken(func) -> None:
         time_start = time.time()
         fn = func(*args, **kwargs)
         time_end = time.time()
-        print(f"INFO: Time of Execution: {time_end-time_end}")
+        print(f"INFO: Time of Execution: {time_end-time_start}")
         return fn
     return _func
 
@@ -83,7 +85,7 @@ def is_python_above_or_equal(major,minor):
     """
     return sys.version_info >= (major,minor)
 
-def check_modules_installed(modules):
+def check_modules_installed(modules:list):
     """Checks if the given modules are installed
 
     Returns list of not installed module
@@ -100,3 +102,15 @@ def check_modules_installed(modules):
                 not_installed_modules.append(module_name)
 
     return not_installed_modules
+
+
+def is_valid_json(json_str:str)->bool:
+    """Check if the given string is valid json string
+
+    Return true if json is valid
+    """
+    try:
+        json.loads(json_str)
+    except ValueError:
+        return False
+    return True
