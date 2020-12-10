@@ -38,3 +38,5 @@ mykey=config.get('my_key')
 - **check_modules_installed()** : check if the given modules are installed
 - **random_useragent()** : return a random useragent
 - **is_valid_json()** : checks if given string is valid json
+- **headline()** : return a formatted string in headline style
+- 

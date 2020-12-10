@@ -13,7 +13,7 @@ import os
 import random
 
 __all__=[
-    'random_useragent_pc'
+    'random_useragent'
 ]
 
 def random_useragent()->str:
