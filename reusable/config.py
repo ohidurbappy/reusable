@@ -70,7 +70,7 @@ class Config(object):
     def save_config_file(self):
         """Saves the config file"""
         with open(self.config_file_name, 'w') as outfile:
-            json.dump(self._config, outfile)
+            json.dump(self._config, outfile,indent=2)
 
     def get(self, key, default_val=None):
         """Return value stored in config 

@@ -40,3 +40,4 @@ mykey=config.get('my_key')
 - **is_valid_json()** : checks if given string is valid json
 - **headline()** : return a formatted string in headline style
 - **splash()** : return a string with splash style
+- **multiline_input()** : takes multiline user input

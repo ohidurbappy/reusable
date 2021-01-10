@@ -1,5 +1,15 @@
 Changelog
 =========
+Version 0.0.6
+------------
+* Fixed configuration format in json
+* Added multiline_input() function
+
+Version 0.0.5
+------------
+* Added headline() function
+* Added splash() function
+
 Version 0.0.4
 -------------
 * Added is_valid_json() function

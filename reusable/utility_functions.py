@@ -20,7 +20,8 @@ __all__=[
     'is_python3',
     'is_python_above_or_equal',
     'check_modules_installed',
-    'is_valid_json'
+    'is_valid_json',
+    'multiline_input'
 ]
 
 
@@ -114,3 +115,27 @@ def is_valid_json(json_str:str)->bool:
     except ValueError:
         return False
     return True
+
+
+def multiline_input(prompt: any = None) -> str:
+    r"""Takes multiline user input
+
+    Params::
+
+        None
+
+    Usage::
+
+        >>> inp=multiline_input()
+        >>> print(inp)
+    """
+    lines=[]
+    if prompt:
+        print(prompt,end="")
+    while True:
+        inp=input()
+        if inp:
+            lines.append(inp)
+        else:
+            break
+    return "\n".join(lines)
