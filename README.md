@@ -41,3 +41,5 @@ mykey=config.get('my_key')
 - **headline()** : return a formatted string in headline style
 - **splash()** : return a string with splash style
 - **multiline_input()** : takes multiline user input
+- **get_datadir()** : returns the app data folder
+- **get_windows_appdata_dir()** : similar to get_datadir() but windows only

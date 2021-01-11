@@ -1,5 +1,9 @@
 Changelog
 =========
+Version 0.0.7
+------------
+* Added get_datadir() function
+* Added get_windows_appdata_dir() function
 Version 0.0.6
 ------------
 * Fixed configuration format in json

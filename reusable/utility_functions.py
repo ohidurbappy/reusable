@@ -9,10 +9,13 @@
 Contains a handful of utility functions.
 """
 
+import os
 import time
 import sys
 import imp
 import json
+import sys
+import pathlib
 
 __all__=[
     'print_table',
@@ -21,7 +24,8 @@ __all__=[
     'is_python_above_or_equal',
     'check_modules_installed',
     'is_valid_json',
-    'multiline_input'
+    'multiline_input',
+    'get_datadir',
 ]
 
 
@@ -139,3 +143,41 @@ def multiline_input(prompt: any = None) -> str:
         else:
             break
     return "\n".join(lines)
+
+
+def get_datadir() -> pathlib.Path:
+    r"""
+    Returns a parent directory path
+    where persistent application data can be stored.
+
+    ```
+    linux: ~/.local/share
+    macOS: ~/Library/Application Support
+    windows: C:/Users/<USER>/AppData/Roaming
+    ```
+    Uses::
+
+        my_datadir = get_datadir() / "program-name"
+
+        try:
+            my_datadir.mkdir(parents=True)
+        except FileExistsError:
+            pass
+
+    """
+
+    home = pathlib.Path.home()
+
+    if sys.platform == "win32":
+        return home / "AppData/Roaming"
+    elif sys.platform.startswith("linux"):
+        return home / ".local/share"
+    elif sys.platform == "darwin":
+        return home / "Library/Application Support"
+
+def get_windows_appdata_dir():
+    r"""Returns the app data
+
+
+    """
+    return os.getenv('APPDATA')
