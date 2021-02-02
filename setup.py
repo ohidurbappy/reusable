@@ -17,7 +17,7 @@ setuptools.setup(
     name=PACKAGE_NAME,
     version=attrs['version'],
     author=attrs['author'],
-    author_email="ohidurbappy+reusable@gmail.com",
+    author_email="me+pypi_reusable@ohidur.com",
     description="Python reusable code and utility classes",
     long_description=long_description,
     long_description_content_type="text/markdown",
