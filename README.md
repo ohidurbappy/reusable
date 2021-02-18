@@ -43,3 +43,5 @@ mykey=config.get('my_key')
 - **multiline_input()** : takes multiline user input
 - **get_datadir()** : returns the app data folder
 - **get_windows_appdata_dir()** : similar to get_datadir() but windows only
+- **slugify()** : Makes slug text from given vlaue
+- **float_range()** : Returns a iterable of floating range

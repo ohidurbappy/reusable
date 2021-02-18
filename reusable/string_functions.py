@@ -11,11 +11,14 @@ Contains a handful of string related functions.
 
 import random
 import string
+import re
+import unicodedata
 
 __all__=[
     'random_string',
     'headline',
-    'splash'
+    'splash',
+    'slugify'
 ]
 
 def random_string(length:int=6, charset:str=string.ascii_letters+string.digits):
@@ -85,4 +88,18 @@ def splash(text: str,decor_char: str = '-') -> str:
     print(txt)
 
     
-    
+def slugify(value, allow_unicode=False):
+    r"""Convert a string to slug url
+
+    Convert to ASCII if 'allow_unicode' is False. Convert spaces or repeated
+    dashes to single dashes. Remove characters that aren't alphanumerics,
+    underscores, or hyphens. Convert to lowercase. Also strip leading and
+    trailing whitespace, dashes, and underscores.
+    """
+    value = str(value)
+    if allow_unicode:
+        value = unicodedata.normalize('NFKC', value)
+    else:
+        value = unicodedata.normalize('NFKD', value).encode('ascii', 'ignore').decode('ascii')
+    value = re.sub(r'[^\w\s-]', '', value.lower())
+    return re.sub(r'[-\s]+', '-', value).strip('-_')

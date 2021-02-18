@@ -26,6 +26,7 @@ __all__=[
     'is_valid_json',
     'multiline_input',
     'get_datadir',
+    'float_range'
 ]
 
 
@@ -176,8 +177,23 @@ def get_datadir() -> pathlib.Path:
         return home / "Library/Application Support"
 
 def get_windows_appdata_dir():
-    r"""Returns the app data
+    r"""Returns the app data dir
 
-
+    Returns the APPDATA directory on windows systems
     """
     return os.getenv('APPDATA')
+
+def float_range(start, stop, step):
+    r"""returns a iter with given float value
+
+
+    Returns a float range, compare it to python built in 
+    range with float type
+
+    Usage::
+
+        float_range(1.1,2.9,.1)
+    """
+    while start < stop:
+        yield float(start)
+        start += step

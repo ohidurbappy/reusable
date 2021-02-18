@@ -14,6 +14,10 @@ import os
 import sys
 from urllib.request import urlopen
 
+__all__=[
+    'download_file'
+]
+
 def download_file(url, path,overrite=False):
     """Downloads a file from `url` and saves it to `path`
 
