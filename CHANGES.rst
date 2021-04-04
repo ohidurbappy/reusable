@@ -1,13 +1,22 @@
 Changelog
 =========
+Version 0.0.9
+------------
+* Removed Namespace class and related code
+* Added chunks() function
+* Improved Config class 
+* Added JsonCache alias for Config class 
+
 Version 0.0.8
 ------------
 * Added slugify() function
 * Added float_range() function
+
 Version 0.0.7
 ------------
 * Added get_datadir() function
 * Added get_windows_appdata_dir() function
+
 Version 0.0.6
 ------------
 * Fixed configuration format in json

@@ -37,7 +37,7 @@ class AppConfig:
                 setattr(self, key, value)
 
 
-class Config(object):
+class Config:
     r"""Config utility class to load a json file
 
     Usage::
@@ -62,14 +62,18 @@ class Config(object):
 
     def _open_config_file(self):
         """Load the config file"""
-
-        with open(self.config_file_name) as json_data_file:
-            conf = json.load(json_data_file)
-        return conf
+        try:
+            with open(self.config_file_name,encoding='utf-8') as json_data_file:
+                conf = json.load(json_data_file)
+                return conf
+        except FileNotFoundError:
+            with open(self.config_file_name, 'w',encoding='utf-8') as json_data_file:
+                json.dump({},json_data_file,indent=2)
+        return {}
 
     def save_config_file(self):
         """Saves the config file"""
-        with open(self.config_file_name, 'w') as outfile:
+        with open(self.config_file_name, 'w',encoding='utf-8') as outfile:
             json.dump(self._config, outfile,indent=2)
 
     def get(self, key, default_val=None):
@@ -87,7 +91,12 @@ class Config(object):
 
     def put(self, key, value):
         self._config[key] = value
+        return self
 
     def update(self):
         """Update the config file"""
         self.save_config_file()
+
+
+class JsonCache(Config):
+    pass
